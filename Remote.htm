@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Remote Controller Server</title>
+    <style>
+        .button {
+            width: 100%;
+            font-size: 8vw;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function doFunction(f) {
+        const Http = new XMLHttpRequest();
+        const url=window.location.href+f;
+        Http.open("GET", url);
+        Http.send();
+        }
+    </script>
+    <button onclick="doFunction('playPause')" class="button">Play/Pause</button><br />
+    <!--<button onclick="doFunction('stop')" class="button">Stop</button><br />
+    <button onclick="doFunction('next')" class="button">Next</button><br />
+    <button onclick="doFunction('previous')" class="button">Previous</button><br />
+        -->
+    <button onclick="doFunction('muteToggle')" class="button">Mute/UnMute</button><br />
+    <button onclick="doFunction('volumeUp')" class="button">Volume up</button><br />
+    <button onclick="doFunction('volumeDown')" class="button">Volume down</button><br />
+    <div style="width:100%; height:100px"></div>
+    <button onclick="doFunction('exit')" class="button">Exit</button><br />
+</body>
+</html>
