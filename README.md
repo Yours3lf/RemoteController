@@ -1,5 +1,5 @@
 # RemoteController
-Control your Windows 10 PC from your mobile phones from your couch.
+Control your Windows 10 PC using your mobile phone from your couch.
 
 ## Compile
 - Open the solution using Visual Studio 2019
@@ -12,5 +12,5 @@ Control your Windows 10 PC from your mobile phones from your couch.
 
 ## Use
 - Find out your IP address on your Windows 10 PC: https://support.microsoft.com/en-gb/help/4026518/windows-10-find-your-ip-address
-- Navigate to that address on your mobile phone (while connected to your WiFi Router)
-- Click buttons on the website
+- Navigate to that address on your mobile phone's browser (while connected to your WiFi Router)
+- Click buttons on the website to perform action
