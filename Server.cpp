@@ -236,6 +236,7 @@ std::wstring getIPaddress()
         if (adapter->Type == MIB_IF_TYPE_ETHERNET)
         {
             ipAddress = adapter->IpAddressList.IpAddress.String;
+            break;
         }
 
         adapter = adapter->Next;
