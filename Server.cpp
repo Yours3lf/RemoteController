@@ -236,7 +236,10 @@ std::wstring getIPaddress()
         if (adapter->Type == MIB_IF_TYPE_ETHERNET)
         {
             ipAddress = adapter->IpAddressList.IpAddress.String;
-            break;
+            if (ipAddress != "0.0.0.0")
+            {
+                break;
+            }
         }
 
         adapter = adapter->Next;
@@ -261,7 +264,8 @@ INT __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLi
     HANDLE reqHandle = 0;
     ret = HttpCreateHttpHandle(&reqHandle, 0); check(ret);
 
-    std::wstring wstr = L"http://" + getIPaddress() + L":80/";
+    std::wstring ip = getIPaddress();
+    std::wstring wstr = L"http://" + ip + L":80/";
     //MessageBoxW(0, wstr.c_str(), 0, MB_OK);
     ret = HttpAddUrl(reqHandle, wstr.c_str(), 0); check(ret);
 
